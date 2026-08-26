@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Provinsi, Kota/Kabupaten & Area Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">DATABASE AREA INDONESIA</p>
+      <h1>Provinsi, Kota/Kabupaten & Area</h1>
+      <p class="subtitle">Seluruh data dari tabel sumber, dilengkapi pencarian cepat.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Cari provinsi, kota/kabupaten, area..." autocomplete="off">
+        <button id="clearBtn" type="button" title="Hapus pencarian">×</button>
+      </div>
+      <div class="filters">
+        <select id="regionFilter">
+          <option value="">Semua wilayah</option>
+        </select>
+        <select id="areaFilter">
+          <option value="">Semua area</option>
+          <option value="Area 1">Area 1</option>
+          <option value="Area 2">Area 2</option>
+          <option value="Area 3">Area 3</option>
+          <option value="Area 4">Area 4</option>
+        </select>
+      </div>
+      <div class="summary" id="summary"></div>
+    </section>
+
+    <section id="tables"></section>
+    <div id="emptyState" class="empty" hidden>
+      <div class="empty-icon">⌕</div>
+      <h2>Data tidak ditemukan</h2>
+      <p>Coba kata kunci lain atau reset filter.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">Data ditampilkan berdasarkan seluruh isi tabel yang diberikan.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

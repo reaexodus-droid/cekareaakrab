@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap');
+
+:root {
+  --maroon: #800000;
+  --maroon-dark: #5f0000;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #171717;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 10px 30px rgba(15, 23, 42, .07);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Maven Pro", Arial, sans-serif;
+}
+
+.hero {
+  background: linear-gradient(135deg, #800000, #5f0000);
+  color: white;
+  padding: 48px 20px 44px;
+}
+
+.container {
+  width: min(1400px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  opacity: .78;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  opacity: .88;
+  font-size: 15px;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 24px 0;
+  padding: 16px;
+  background: rgba(255,255,255,.94);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.search-icon {
+  font-size: 24px;
+  color: var(--muted);
+  transform: rotate(-15deg);
+}
+
+#searchInput {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 14px 0;
+  font: inherit;
+  font-size: 15px;
+}
+
+#clearBtn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+#clearBtn:hover { background: #e5e7eb; }
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 10px;
+  padding: 11px 12px;
+  font: inherit;
+  outline: none;
+}
+
+select:focus, .search-wrap:focus-within {
+  border-color: #b77;
+  box-shadow: 0 0 0 3px rgba(128,0,0,.08);
+}
+
+.summary {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.region {
+  margin-bottom: 30px;
+}
+
+.region-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  color: var(--maroon);
+  font-size: 20px;
+}
+
+.region-title::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #eadede;
+}
+
+.table-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.table-scroll { overflow-x: auto; }
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 13px 14px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+th {
+  background: #faf7f7;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+tbody tr:last-child td { border-bottom: 0; }
+
+tbody tr:hover { background: #fffafa; }
+
+.province {
+  width: 20%;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cities { width: 62%; }
+
+.area {
+  width: 18%;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+mark {
+  background: #ffe69a;
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.empty {
+  text-align: center;
+  padding: 70px 20px;
+  color: var(--muted);
+}
+
+.empty-icon {
+  font-size: 50px;
+  color: var(--maroon);
+}
+
+.empty h2 {
+  margin: 10px 0 4px;
+  color: var(--text);
+}
+
+footer {
+  margin-top: 50px;
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hero { padding: 34px 16px; }
+  .container { width: min(100% - 20px, 1400px); }
+  .toolbar { margin: 12px 0 18px; padding: 12px; }
+  .filters { grid-template-columns: 1fr; }
+  th, td { padding: 11px 10px; }
+}
